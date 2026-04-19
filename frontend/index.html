@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ShineMasters Car Wash</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">ShineMasters</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">Book a Wash</a>
+      <a href="bookings.html">Manage Bookings</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-text">
+      <p class="hero-tag">Professional Car Care</p>
+      <h1>Your Car Deserves<br/>The Best Wash</h1>
+      <p class="hero-sub">Book in under 60 seconds. We handle the rest.</p>
+    </div>
+    <div class="hero-car">🚗</div>
+  </header>
+
+  <!-- BOOKING FORM -->
+  <section class="form-section">
+    <div class="form-card">
+      <h2>Book Your Wash</h2>
+      <p class="form-subtitle">Fill in the details below to schedule your appointment</p>
+
+      <div id="form-message" class="form-message hidden"></div>
+
+      <div class="form-grid">
+        <div class="input-group">
+          <label for="customer_name">Full Name</label>
+          <input type="text" id="customer_name" placeholder="e.g. Rahul Sharma" />
+        </div>
+
+        <div class="input-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="e.g. 9876543210" />
+        </div>
+
+        <div class="input-group">
+          <label for="car_model">Car Model</label>
+          <input type="text" id="car_model" placeholder="e.g. Hyundai Creta" />
+        </div>
+
+        <div class="input-group">
+          <label for="service_id">Select Service</label>
+          <select id="service_id">
+            <option value="">Loading services...</option>
+          </select>
+        </div>
+
+        <div class="input-group">
+          <label for="booking_date">Date</label>
+          <input type="date" id="booking_date" />
+        </div>
+
+        <div class="input-group">
+          <label for="booking_time">Time</label>
+          <input type="time" id="booking_time" />
+        </div>
+      </div>
+
+      <button class="btn-primary" onclick="submitBooking()">
+        Confirm Booking →
+      </button>
+    </div>
+
+    <!-- SERVICE CARDS -->
+    <div class="services-panel">
+      <h3>Our Services</h3>
+      <div id="service-cards" class="service-cards"></div>
+    </div>
+  </section>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

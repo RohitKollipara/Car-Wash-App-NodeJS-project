@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Manage Bookings — ShineMasters</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-logo">ShineMasters</div>
+    <div class="nav-links">
+      <a href="index.html">Book a Wash</a>
+      <a href="bookings.html" class="active">Manage Bookings</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Manage Bookings</h1>
+    <p>View, edit, and manage all car wash appointments</p>
+  </div>
+
+  <!-- BOOKINGS TABLE -->
+  <section class="table-section">
+    <div id="table-message" class="form-message hidden"></div>
+    <div class="table-wrapper">
+      <table id="bookings-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Customer</th>
+            <th>Phone</th>
+            <th>Car</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="bookings-body">
+          <tr><td colspan="9" class="loading-row">Loading bookings...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- EDIT MODAL -->
+  <div id="edit-modal" class="modal-overlay hidden">
+    <div class="modal-card">
+      <h2>Edit Booking</h2>
+      <input type="hidden" id="edit-id" />
+
+      <div class="form-grid">
+        <div class="input-group">
+          <label>Full Name</label>
+          <input type="text" id="edit-customer_name" />
+        </div>
+        <div class="input-group">
+          <label>Phone</label>
+          <input type="tel" id="edit-phone" />
+        </div>
+        <div class="input-group">
+          <label>Car Model</label>
+          <input type="text" id="edit-car_model" />
+        </div>
+        <div class="input-group">
+          <label>Service</label>
+          <select id="edit-service_id"></select>
+        </div>
+        <div class="input-group">
+          <label>Date</label>
+          <input type="date" id="edit-booking_date" />
+        </div>
+        <div class="input-group">
+          <label>Time</label>
+          <input type="time" id="edit-booking_time" />
+        </div>
+        <div class="input-group full-width">
+          <label>Status</label>
+          <select id="edit-status">
+            <option value="pending">Pending</option>
+            <option value="confirmed">Confirmed</option>
+            <option value="completed">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button class="btn-secondary" onclick="closeModal()">Cancel</button>
+        <button class="btn-primary" onclick="saveEdit()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
